@@ -13,6 +13,6 @@ modules:
   revision: v0.27.0
   
 designPatterns:
-  - pattern: github.com/tomoki5358/my-vs-app/myapp:myapp
+  - pattern: github.com/tomoki5358/my-vs-app/myapp:web
   - pattern: qmonus.net/adapter/official/pipeline/deploy:simple
   #- pattern: qmonus.net/adapter/official/pipeline/sample:resolveIPAddress
