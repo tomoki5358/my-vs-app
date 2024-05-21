@@ -1,0 +1,14 @@
+apiVersion: vs.axis-dev.io/v1
+kind: AssemblyLine
+metadata:
+  name: deploy
+spec:
+  params: []
+  stages:
+    - name: deploy
+      spec:
+        pipeline: web-deploy
+        deployment:
+          app: mywebapp
+          name: mywebapp
+        params: []
