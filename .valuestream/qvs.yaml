@@ -1,30 +1,18 @@
-params:
-  - name: k8sNamespace
-    type: string
-  - name: imageName
-    type: string
-
+params: []
 
 modules:
-  - name: official
-    remote:
-      repo: https://github.com/qmonus/official-cloud-native-adapters.git
-      revision: v0.27.0
-  # - name: github.com/qmonus/official-cloud-native-adapters
-  #   revision: v0.27.0
-
+#  - name: github.com/qmonus/official-cloud-native-adapters
+- name: github.com/tomoki5358/my-vs-app
+  remote:
+    repo: https://github.com/tomoki5358/my-vs-app.git
+    revision: main
+    path: .
+  # local: 
+  #   path: .
+- name: qmonus.net/adapter/official
+  revision: v0.27.0
+  
 designPatterns:
-  - pattern: qmonus.net/adapter/official/kubernetes/deployment/simple
-    params:
-      k8sNamespace: $(params.k8sNamespace)
-      imageName:    $(params.imageName)
-      appName: nginx-demo
-      port: "80"
-      replicas: "1"
-  - pattern: qmonus.net/adapter/official/kubernetes/sample:loadbalancer 
-    params:
-      k8sNamespace: $(params.k8sNamespace)
-      appName: nginx-demo
-      port: "80"
+  - pattern: github.com/tomoki5358/my-vs-app/myapp:myapp
   - pattern: qmonus.net/adapter/official/pipeline/deploy:simple
-  - pattern: qmonus.net/adapter/official/pipeline/sample:resolveIPAddress
+  #- pattern: qmonus.net/adapter/official/pipeline/sample:resolveIPAddress
