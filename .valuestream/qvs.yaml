@@ -1,18 +1,18 @@
 params: []
 
 modules:
-#  - name: github.com/qmonus/official-cloud-native-adapters
-- name: github.com/tomoki5358/my-vs-app
-  remote:
-    repo: https://github.com/tomoki5358/my-vs-app.git
-    revision: main
-    path: .
-  # local: 
-  #   path: .
-- name: qmonus.net/adapter/official
-  revision: v0.27.0
+  - name: github.com/tomoki5358/my-vs-app
+    local:
+      path: .
+# - name: github.com/tomoki5358/my-vs-app
+#   remote:
+#     repo: https://github.com/tomoki5358/my-vs-app.git
+#     revision: main
+#     path: .valuestream
+# - name: qmonus.net/adapter/official
+#   revision: v0.27.0
   
 designPatterns:
-  - pattern: github.com/tomoki5358/my-vs-app/myapp:web
+  - pattern: github.com/tomoki5358/my-vs-app/web:web
   - pattern: qmonus.net/adapter/official/pipeline/deploy:simple
   #- pattern: qmonus.net/adapter/official/pipeline/sample:resolveIPAddress
