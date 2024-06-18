@@ -16,3 +16,4 @@ designPatterns:
   - pattern: github.com/tomoki5358/my-vs-app/web:web
   - pattern: qmonus.net/adapter/official/pipeline/deploy:simple
   #- pattern: qmonus.net/adapter/official/pipeline/sample:resolveIPAddress
+  - pattern: qmonus.net/adapter/official/pipeline/utils:imagePromoteGcp
