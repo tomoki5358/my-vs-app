@@ -24,15 +24,6 @@ DesignPattern: {
 							name:      "shared-data"
 							mountPath: "/usr/share/nginx/html"
 						}]
-					}, {
-						name:  "debian-container"
-						image: "debian"
-						volumeMounts: [{
-							name:      "shared-data"
-							mountPath: "/pod-data"
-						}]
-						command: ["/bin/sh"]
-						args: ["-c", "echo Hello from the debian container > /pod-data/index.html"]
 					}]
 				}
 			}
