@@ -1,4 +1,6 @@
-params: []
+params:
+  - name: dbpass
+    type: secret
 
 modules:
   - name: github.com/tomoki5358/my-vs-app
@@ -9,11 +11,13 @@ modules:
 #     repo: https://github.com/tomoki5358/my-vs-app.git
 #     revision: main
 #     path: .valuestream
-# - name: qmonus.net/adapter/official
-#   revision: v0.27.0
+  - name: qmonus.net/adapter/official
+    revision: v0.27.0
   
 designPatterns:
   - pattern: github.com/tomoki5358/my-vs-app/web:web
+    params:
+      dbpass: $(params.dbpass)
   - pattern: qmonus.net/adapter/official/pipeline/deploy:simple
   #- pattern: qmonus.net/adapter/official/pipeline/sample:resolveIPAddress
-  - pattern: qmonus.net/adapter/official/pipeline/utils:imagePromoteGcp
+  #- pattern: qmonus.net/adapter/official/pipeline/utils:imagePromoteGcp

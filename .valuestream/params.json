@@ -1,3 +1,11 @@
 {
   "params": []
+  ,
+  "secrets":[
+    {
+      "name": "dbpass",
+      "key": "ex",
+      "version": "ex-dbpass"
+    }
+  ]
 }
